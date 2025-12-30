@@ -1,0 +1,24 @@
+# 排除虛擬環境（這是最大的檔案，絕對不要傳）
+.venv/
+venv/
+env/
+
+# 排除 Python 編譯快取
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 排除 Jupyter Notebook 的暫存檔與快取
+.ipynb_checkpoints/
+checkpoint/
+
+# 排除本地端的 Streamlit 設定
+.streamlit/
+
+# 排除系統暫存檔
+.DS_Store
+Thumbs.db
+
+# 排除你用來產出模型的原始 Notebook (既然已經有 pkl 了，不需要傳這個上去跑)
+pipeline.ipynb
