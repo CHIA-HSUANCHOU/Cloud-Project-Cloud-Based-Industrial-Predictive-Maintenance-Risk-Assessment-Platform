@@ -1,20 +1,21 @@
-gcloud artifacts repositories create my-repo \
-    --repository-format=docker \
-    --location=asia-east1 \
-    --description="My Docker repository"
+gcloud artifacts repositories create <REPOSITORY_NAME> \
+  --repository-format=docker \
+  --location=<REGION> \
+  --description="Docker repository for Cloud Run deployment"
 
-gcloud projects add-iam-policy-binding project-53aee956-cea7-4ec2-894 \
-    --member="serviceAccount:1012747536012-compute@developer.gserviceaccount.com" \
+gcloud projects add-iam-policy-binding project- \
+    --member="" \
     --role="roles/storage.objectViewer"
 
 # 賦予上傳映像檔到倉庫的權限
-gcloud projects add-iam-policy-binding project-53aee956-cea7-4ec2-894 \
-    --member="serviceAccount:1012747536012-compute@developer.gserviceaccount.com" \
+gcloud projects add-iam-policy-binding project-\
+    --member="" \
     --role="roles/artifactregistry.writer"
 
 # 賦予寫入日誌的權限 (解決最後一行的 INFO 提示)
-gcloud projects add-iam-policy-binding project-53aee956-cea7-4ec2-894 \
-    --member="serviceAccount:1012747536012-compute@developer.gserviceaccount.com" \
+gcloud projects add-iam-policy-binding project- \
+    --member="" \
     --role="roles/logging.logWriter"
 
-gcloud builds submit --tag asia-east1-docker.pkg.dev/project-53aee956-cea7-4ec2-894/my-repo/my-web-app:v1
+
+gcloud builds submit --tag <REGION>-docker.pkg.dev/<PROJECT_ID>/<REPOSITORY_NAME>/<IMAGE_NAME>:v1
