@@ -1,0 +1,1 @@
+# Cloud-Project-Cloud-Based-Industrial-Predictive-Maintenance-Risk-Assessment-Platform
